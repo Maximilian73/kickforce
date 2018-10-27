@@ -1,0 +1,14 @@
+all:
+  sv_admin_board:
+    web_dir:                      /svAdminBoardPlugin
+    image_dir:                    /svAdminBoardPlugin/images/icons/
+    default_image:                config.png
+    resize_mode:                  thumbnail
+    logout:                       true
+    site:                         Артекс Медиа
+    site_system:                  Artex System
+    include_path:                 true
+    include_jquery_no_conflict:   false
+    login_route:                  @sf_guard_signin
+    logout_route:                 @sf_guard_signout
+    

@@ -1,0 +1,41 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    #title:        symfony project
+    #description:  symfony project
+    #keywords:     symfony, project
+    #language:     en
+    #robots:       index, follow
+
+  stylesheets:    
+    - style.css
+    - bootstrap.css
+#    - font-awesome.css
+#    - font-awesome-ie7.css
+#    - skins/orange.css
+    - skins/green.css
+#    - skins/red.css
+    - social.css
+
+  javascripts:
+    - lib-1-9-1.js
+    - lib-1-7-1.js
+    - modernizr.js
+    - easing.js
+    - bootstrap.js
+    - bxslider.js
+    - fitvids.js
+    - clearInput.js
+    - smooth-scroll.js
+    - prettyPhoto.js
+    - social.js
+    - countdown.js
+    - custom.js
+
+  has_layout:     true
+  layout:         layout

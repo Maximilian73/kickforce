@@ -1,0 +1,13 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sf_captchagd:
+    image_width:                130 # image width in pixels
+    image_height:               48 # image height in pixels
+    char_align:                 40 #
+    chars:                      "123456789abcdef" # possible chars in captcha
+    length:                     4 # length of captcha
+    font_size:                  20 # font size
+    force_new_captcha:          true # if true - captcha regenerated EVERY request, even if user input true value before

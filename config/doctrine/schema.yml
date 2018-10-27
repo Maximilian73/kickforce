@@ -1,0 +1,107 @@
+ProjectCategory:
+  tableName: force_project_category
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [name]
+      canUpdate: true
+#      builder: [SlugifyClass, Slugify]
+  columns:
+    name:     { type: varchar(50), notnull: true }
+    public:   { type: boolean, default: true }    
+
+ProjectStatus:
+  tableName: force_project_status
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [name]
+      canUpdate: true
+#      builder: [SlugifyClass, Slugify]
+  columns:
+    name: { type: varchar(20), notnull: true }
+
+Project:
+  tableName: force_project
+  actAs:   
+    Timestampable: []  
+    Sluggable:
+      unique: true
+      fields: [name]
+      canUpdate: true
+  columns:
+    user_id:     { type: integer(11), notnull: true }
+    category_id: { type: integer(11), notnull: true }
+    status_id:   { type: integer(11), notnull: true }
+    name:        { type: varchar(255), notnull: true }
+    logo:        { type: varchar(255) }
+    description: { type: string(600) }
+    idea:        { type: string(2147483647)}
+    market:      { type: string(2147483647)}
+    team:        { type: string(2147483647)}
+    target:      { type: integer(11) }
+    percent:     { type: integer(2) }
+    started_at:  { type: datetime, notnull: true }
+    ended_at:    { type: datetime, notnull: true }
+  relations:    
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      type: one
+      owningSide: true
+      onDelete: CASCADE
+      foreignType: many
+    Status:
+      class: ProjectStatus
+      local: status_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      foreignType: many		     
+    Category:
+      class: ProjectCategory
+      local: category_id
+      foreign: id
+      type: one
+      onDelete: CASCADE
+      foreignType: many		
+
+Amount:
+  tableName: force_amount
+  actAs: [Timestampable]
+  columns:
+    user_id:        { type: integer(11), notnull: true }
+    project_id:     { type: integer(11), notnull: true }
+    transaction_id: { type: varchar(255) }
+    first_name:     { type: string(255) }
+    last_name:      { type: string(255) }
+    email_address:  { type: string(255), notnull: true }
+    username:       { type: string(128), notnull: true }
+    country:        { type: string(50) }
+    state:          { type: string(50) }
+    city:           { type: string(50) }
+    address:        { type: string(255) }
+    postal_code:    { type: string(10) }
+    phone:          { type: string(25) }
+    mobile_phone:   { type: string(25) }
+    project_amount: { type: decimal(10), notnull: true }
+    site_amount:    { type: decimal(10), notnull: true }
+    total_amount:   { type: decimal(10), notnull: true }
+  relations:    
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreign: id
+      type: one
+      owningSide: true
+      onDelete: CASCADE
+      foreignType: many
+    Project:
+      class: Project
+      local: project_id
+      foreign: id
+      type: one
+      owningSide: true
+      onDelete: CASCADE
+      foreignType: many		     

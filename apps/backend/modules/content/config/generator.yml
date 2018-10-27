@@ -1,0 +1,36 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Content
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          content
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        description:    { label: Description, help: Here you can leave the description }      
+      list:    
+        title: Content
+        display: 
+          - =name
+          - slug
+        actions: []
+        batch_actions: []
+        object_actions:
+          _edit: []	
+      filter: 
+        class:  false
+      form:    ~
+      edit:    
+        title: %%name%% (%%slug%%)
+        actions:
+          _list: []		
+          _save: []
+      new:
+        title: Create new content

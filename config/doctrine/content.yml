@@ -1,0 +1,24 @@
+Content:
+  tableName: force_content
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [name]
+      canUpdate: true
+#      builder: [SlugifyClass, Slugify]
+  columns:
+    name:        { type: varchar(255) }
+    description: { type: string(2147483647) }
+
+
+Article:
+  tableName: force_article
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [name]
+      canUpdate: true  
+  columns:
+    name:        { type: varchar(255) }
+    description: { type: string(2147483647) }
+    public:   { type: boolean, default: true }        

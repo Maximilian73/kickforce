@@ -1,0 +1,79 @@
+ProjectCategory:
+  Category1:
+    name: Animals
+  Category2:
+    name: Art
+  Category3:
+    name: Comic
+  Category4:
+    name: Community
+  Category5:
+    name: Dance
+  Category6:
+    name: Design
+  Category7:
+    name: Education
+  Category8:
+    name: Environment
+  Category9:
+    name: Fashion
+  Category10:
+    name: Film
+  Category11:
+    name: Food
+  Category12:
+    name: Gaming
+  Category13:
+    name: Health
+  Category14:
+    name: Music
+  Category15:
+    name: Photography
+  Category16:
+    name: Politics
+  Category17:
+    name: Religion
+  Category18:
+    name: Small Business
+  Category19:
+    name: Sports
+  Category20:
+    name: Technology
+  Category21:
+    name: Theater
+  Category22:
+    name: Transmedia
+  Category23:
+    name: Video / Web
+  Category24:
+    name: Writing
+
+ProjectStatus:
+  Status1:
+    name: Not Active
+  Status2:
+    name: Active
+  Status3:
+    name: Expires
+  Status4:
+    name: Banned
+
+Project:
+<?php srand(); ?>
+<?php for ($c = 1; $c <= 12; $c++): ?>
+<?php $period = 10 * $c; ?>
+
+  Project<?php echo $c; ?>:
+    User:        [User_admin] 
+    Category:    Category<?php echo rand(1, 24); ?> 
+    Status:      [Status2] 
+    name:        Project name <?php echo $c; ?> 
+    description: <?php echo 'Welcome to the Project' . $c; ?> 
+    idea:        We know you are an influencer! Through our Influencer Thank You Program, we want to give you your GOkey for free, for a few minutes of helping spread the word... For each person you refer to pledge for a GOkey, we will give you a $10 refund at the end of the Indiegogo Campaign. For example: Pledge for the 16gig GOkey ($39) on special pricing #1, then refer 4 people to pledge and we will credit you for $10 for each of them, making your GOkey FREE. Upon pledging, we will email you details on how to track your progress. How it works: Simply pledge for a GOkey to get your personal tracking URL, then press the share buttons or copy your unique URL below the main video at the top of the page. Spread the word about GOkey with your friends and around the web and you will get the credit! Get creative... Reddit, Stumble Upon, BuzzFeed and blogs can help greatly! 
+    market:      We didn't take GOkey to indiegogo just to raise funds. We value the power of early adaptors in best determining the direction this device is heading. We gathered your suggestions and did a poll with the most popular features. On the poll it was all of you that shaped the stretch goals. Bringing such an awesome device to life is exciting! Share your ideas with us  and help shape its final version. Your contribution has magnitude! 
+    team:        There are 2 things in common to all individuals bellow. They are all exceptional in what they do. They joined, because they believe it and really like it. A big thank you to all those who invested their time and skills to making it a reality. 
+    target:      <?php echo 1000 * $c; ?> 
+    percent:     15 
+    started_at:  <?php echo "'" . date('Y-m-d H:m:s') . "'"; ?>  
+    ended_at:    <?php echo "'" . date('Y-m-d H:m:s', time() + $period * 86400) . "'"; ?>  
+<?php endfor; ?>

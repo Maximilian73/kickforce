@@ -1,0 +1,37 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProjectCategory
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          project_category
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  ~
+      list:
+        title:   Project category list
+        display:
+          - =name
+          - slug
+        actions: []
+        batch_actions:
+          _delete:  ~
+        object_actions:
+          _edit: []
+        sort: [name, asc]		  
+      filter:
+        class: false
+      form:    ~
+      edit:
+        title: Editing category "%%name%%"
+        actions:
+          _list: []
+          _save: []
+      new:
+        title: Create new category

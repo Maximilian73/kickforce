@@ -1,0 +1,27 @@
+sfGuardUserProfile:
+  tableName: force_guard_user_profile
+  columns:
+    user_id:      { type: integer(11), primary: true }
+    country:      { type: string(50) }
+    state:        { type: string(50) }
+    city:         { type: string(50) }
+    address:      { type: string(255) }
+    postal_code:  { type: string(10) }
+    organization: { type: string(50) }
+    phone:        { type: string(25) }
+    mobile_phone: { type: string(25) }
+    description:  { type: string(1000) }
+    avatar:       { type: blob }
+    image:        { type: blob }
+    facebook:     { type: string(255) }
+    twitter:      { type: string(255) }
+    youtube:      { type: string(255) }
+    website:      { type: string(255) }
+  relations:
+    User:
+      local: user_id
+      class: sfGuardUser
+      type: one
+      foreignType: one
+      foreignAlias: Profile
+      onDelete: CASCADE

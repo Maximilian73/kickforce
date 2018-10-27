@@ -1,0 +1,29 @@
+sfGuardUser:
+  User_admin:
+    first_name:     Admin 
+    last_name:      Admin 
+    email_address:  admin@gmail.com 
+    username:       admin 
+    password:       admin 
+    is_super_admin: true 
+    Groups:         [Group_admin] 
+
+sfGuardGroup:
+  Group_admin:
+    name:           admin 
+    description:    Administrator group 
+    Permissions:    [Permission_admin] 
+
+sfGuardPermission:
+  Permission_admin:
+    name:           admin 
+    description:    Administrator permission 
+
+sfGuardUserProfile:
+  Profile_admin:
+    user_id: 1 
+    country: UA 
+    state: Dnepropetrovsk area 
+    city: Dnepropetrovsk 
+    address: Korolenko str. 2 
+    postal_code: 49000 

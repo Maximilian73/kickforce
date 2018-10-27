@@ -1,0 +1,23 @@
+Content:
+  About:
+    name: About Us
+    description: The sponsors of this website believe there are many projects arising out of mostly developing countries around the world that can accomplish the dual objective of assisting in the making of disciples as stated in Matt 28:19-20 and simultaneously significantly improve the lives of the people from which the project comes. Currently, most of these projects are not being funded because people and other organizations who have the funds are not aware of the projects and the people with the projects do not know how to find the necessary funding. This website presents a neutral “marketplace’ where these projects can be exposed to the funding sources.
+  How It Works:
+    name: How It works
+    description: We're distributing millions of dollars every week. We offer two different funding models as well as both PayPal and credit card payment options, so you get to choose the model that works best for you.
+
+<?php $text = '<h3> Event Organizer </h3><p> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p><strong> Requirements </strong><ol><li> - Be fluent in English</li><li> - Have Experince in Digital Purchashing</li><li> - Team Management </li></ol>'; ?>
+
+Article:
+  Article1:
+    name: Description 1
+    description: <?php echo $text; ?>    
+  Article2:
+    name: Description 2
+    description: <?php echo $text; ?>    
+  Article3:
+    name: Description 3
+    description: <?php echo $text; ?>    
+  Article4:
+    name: Description 4
+    description: <?php echo $text; ?>    

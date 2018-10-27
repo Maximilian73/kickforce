@@ -1,0 +1,8 @@
+cache/
+log/
+vendor/
+config/databases.yml
+*.[oa]
+*~
+nbproject/
+

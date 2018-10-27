@@ -1,0 +1,51 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           sfGuardUser
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          sf_guard_user
+    with_doctrine_route:   true
+
+    config:
+      fields:
+        first_name:     { label: "First Name" }
+        last_name:      { label: "Last Name" }
+        email_address:  { label: "Email" }
+        username:       { label: "Username" }
+        password:       { label: "Password" }
+        password_again: { label: "Confirm password" }
+        is_active:      { label: "Active"}
+        is_super_admin: { label: "Superadmin"}
+        created_at:     { label: "Created", date_format: yyyy-MM-dd H:m:ss}
+        updated_at:     { label: "Updated", date_format: yyyy-MM-dd H:m:ss}
+        last_login:     { label: "Last visit", date_format: yyyy-MM-dd H:m:ss}
+
+      list:
+        title:   Administer page
+        display: [=username, created_at, updated_at, last_login]
+#       actions: []          
+        batch_actions: []    
+        object_actions:
+          _edit: []
+
+      filter:  
+        class: false
+
+      form:
+        class: sfGuardUserAdminForm
+        display:
+          "Administrator":          [first_name, last_name, email_address, username, password, password_again]
+          #"Permissions and groups": [is_active, is_super_admin, groups_list, permissions_list]
+
+      edit:
+        title: Editing "%%username%%"
+        actions:
+          _list: []
+          _save: []                 
+#          _delete: [] 
+      new:
+        title: Create new admin
